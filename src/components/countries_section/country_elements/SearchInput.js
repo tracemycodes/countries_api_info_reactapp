@@ -10,6 +10,22 @@ const MyForm = styled.form`
   justify-content: space-between;
   padding: 0rem 3rem;
   margin: 1.7rem 0;
+
+  input[type='text'] {
+  max-width: 18.5rem;
+  width: 90%;
+  padding: 0.65rem 2rem;
+  font-size: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-image: url(../images/search.svg);
+  background-size: 0.8rem;
+  background-repeat: no-repeat;
+  background-position: 0.5rem;
+  color: #fff;
+}
 `
 
 const SearchInput = () => {
