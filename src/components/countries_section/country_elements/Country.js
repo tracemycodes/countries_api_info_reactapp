@@ -36,19 +36,21 @@ const CountryDetails = styled.div`
   }
 `;
 
-const Country = () => {
+const Country = ({ countryInfo }) => {
   return (
     <CountryDetails>
-      <div className='flag'></div>
-      <h2 className='country'>Aland Islands</h2>
+      <div className='flag'>
+        <img src={countryInfo.flag} alt='' />
+      </div>
+      <h2 className='country'>{countryInfo.name}</h2>
       <p className='population'>
-        <strong>population:</strong> 2,886,026
+        <strong>population:</strong> {countryInfo.population}
       </p>
       <p className='Region'>
-        <strong>Region:</strong> 2,886,026
+        <strong>Region:</strong> {countryInfo.region}
       </p>
       <p className='Capital'>
-        <strong>Capital:</strong> 2,886,026
+        <strong>Capital:</strong> {countryInfo.capital}
       </p>
     </CountryDetails>
   );
