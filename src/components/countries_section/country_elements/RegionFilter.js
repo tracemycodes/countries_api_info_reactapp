@@ -17,6 +17,7 @@ const SelectDiv = styled.ul`
   .select-div {
     position: absolute;
     background-color: hsl(209, 23%, 22%);
+    list-style: none;
     color: #fff;
     top: 105%;
     left: 0;
@@ -24,6 +25,7 @@ const SelectDiv = styled.ul`
     z-index: 2;
   }
   .select-option {
+    list-style: none;
     padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
     border: 1px solid transparent;
@@ -43,6 +45,7 @@ const RegionFilter = () => {
 
   const innerOption = (e) => {
     setSelectText(e.target.innerText)
+    setModal(false)
     e.preventDefault()
   }
 
@@ -64,6 +67,7 @@ const RegionFilter = () => {
 
         {modal && 
         <ul className='select-div'>
+          <li className='select-option' value="Africa" onClick={innerOption} >All</li>
           <li className='select-option' value="Africa" onClick={innerOption} >Africa</li>
           <li className='select-option' value="America" onClick={innerOption} >America</li>
           <li className='select-option' value="Asia" onClick={innerOption} >Asia</li>

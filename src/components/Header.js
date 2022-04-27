@@ -11,6 +11,7 @@ const NavBar = styled.header`
   box-shadow: 0px 10px 15px 3px rgba(0, 0, 0, 0.1);
   color: #fff;
   z-index: 3;
+  margin: 0;
 
   button {
     border: none;

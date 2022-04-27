@@ -11,7 +11,10 @@ html {
   box-sizing: border-box;
 }
 
-
+body {
+  
+    background-color: hsl(207, 26%, 17%);
+}
 `;
 
 export default GlobalStyle;
