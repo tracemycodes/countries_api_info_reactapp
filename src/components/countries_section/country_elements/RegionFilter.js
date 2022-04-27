@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const SelectDiv = styled.div`
+const SelectDiv = styled.ul`
   position: relative;
   font-family: Arial;
   width: 8rem;
@@ -12,6 +12,7 @@ const SelectDiv = styled.div`
   padding: 0.4rem 0.8rem;
   font-size: 0.7rem;
   cursor: pointer;
+  list-style: none;
 
   .select-div {
     position: absolute;
@@ -37,19 +38,41 @@ const SelectDiv = styled.div`
 
 const RegionFilter = () => {
   const [selectText, setSelectText] = useState('');
+  const [modal, setModal] = useState(false);
+
+
+  const innerOption = (e) => {
+    setSelectText(e.target.innerText)
+    e.preventDefault()
+  }
+
+  const handleModal = (e) => {
+    if (modal) {
+      setModal(false)
+    } else {
+      setModal(true)
+    }
+  }
+
+
 
 
   return (
     <>
       <SelectDiv>
-        <div className='select-header'>{selectText === '' ? "Filter By Region" : {selectText} }</div>
-        <div className='select-div'>
-          <p className='select-option' value="Africa"  >Africa</p>
-          <p className='select-option' value="America"  >America</p>
-          <p className='select-option' value="Asia"  >Asia</p>
-          <p className='select-option' value="Europe" >Europe</p>
-          <p className='select-option' value="Oceania" >Oceania</p>
-        </div>
+        <li className='select-header' onClick={handleModal}> {selectText !== '' ? selectText : 'Filter by region'} </li>
+
+        {modal && 
+        <ul className='select-div'>
+          <li className='select-option' value="Africa" onClick={innerOption} >Africa</li>
+          <li className='select-option' value="America" onClick={innerOption} >America</li>
+          <li className='select-option' value="Asia" onClick={innerOption} >Asia</li>
+          <li className='select-option' value="Europe" onClick={innerOption} >Europe</li>
+          <li className='select-option' value="Oceania" onClick={innerOption} >Oceania</li>
+        </ul>
+        }
+
+        
       </SelectDiv>
     </>
   );

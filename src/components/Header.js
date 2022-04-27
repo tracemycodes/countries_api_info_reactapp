@@ -34,8 +34,8 @@ const Header = () => {
   return (
     <NavBar>
       <h1>Where in the world?</h1>
-      <button class='theme-btn'>
-        <i class='fa-regular fa-sun theme-icon'></i>
+      <button className='theme-btn'>
+        <i className='fa-regular fa-sun theme-icon'></i>
         <p>Dark Mode</p>
       </button>
     </NavBar>

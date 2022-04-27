@@ -39,9 +39,8 @@ const SearchInput = () => {
 
   return (
     <MyForm>
-      <form>
           <input type="text" name="text" placeholder="Search for a country" className="searchInput" onChange={onChange} />       
-      </form>
+      
       <RegionFilter/>
     </MyForm>
   )
