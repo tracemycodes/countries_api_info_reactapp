@@ -1,4 +1,12 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+  case value:
+    
+    break;
+
+  default:
+    break;
+} }
 import CountrySection from "./components/countries_section/CountrySection";
 import Header from "./components/Header";
 
@@ -15,10 +23,18 @@ function App() {
    }
 
   return (
+    <Router>
     <div className="App">
       <Header/>
-      <CountrySection getCountryInfo={getCountryInfo} countriesArr={countriesArr} />
+      <Switch>
+        <Route exact path='/' render={props => (
+          <CountrySection getCountryInfo={getCountryInfo} countriesArr={countriesArr} />
+
+        )} />
+      
+      </Switch>
     </div>
+    </Router>
   );
 }
 
