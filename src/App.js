@@ -1,12 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-  case value:
-    
-    break;
-
-  default:
-    break;
-} }
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CountrySection from "./components/countries_section/CountrySection";
 import Header from "./components/Header";
 
