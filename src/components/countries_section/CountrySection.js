@@ -15,6 +15,8 @@ const AllCountries = styled.section`
 
 const CountrySection = ({ getCountryInfo, countriesArr }) => {
 
+  console.log("object");
+
   useEffect(() => {
     getCountryInfo()
     // es-lint 

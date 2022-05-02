@@ -21,14 +21,10 @@ function App() {
           <Route
             exact
             path='/'
-            render={(props) => (
-              <>
-                <CountrySection
-                  getCountryInfo={getCountryInfo}
-                  countriesArr={countriesArr}
-                />
-              </>
-            )}
+            element={<CountrySection
+                getCountryInfo={getCountryInfo}
+                countriesArr={countriesArr}
+              />}
           />
         </Routes>
       </div>
