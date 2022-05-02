@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import SearchInput from './country_elements/SearchInput'
 import styled from 'styled-components'
 import Country from './country_elements/Country'
@@ -15,21 +15,26 @@ const AllCountries = styled.section`
 
 const CountrySection = ({ getCountryInfo, countriesArr }) => {
 
-  console.log("object");
-
+  
   useEffect(() => {
     getCountryInfo()
     // es-lint 
   }, []);
+  
+  
+  const [ singleCountry, setSingleCountry ] = useState({});
 
-
+  const singleCountryItem = (nation) => {
+    setSingleCountry(nation)
+    console.log(singleCountry);
+  }
 
   return (
     <>
     <SearchInput/>
     <AllCountries>
       {countriesArr.map(country => 
-        <Country key={country.id} countryInfo={country} />
+        <Country key={country.id} countryInfo={country} singleCountryItem={singleCountryItem} />
       )}
 
     </AllCountries>
