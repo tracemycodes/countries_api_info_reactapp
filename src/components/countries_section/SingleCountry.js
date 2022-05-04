@@ -1,42 +1,77 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
-const SingleCountrySection = Styled.section`
+const CountryDetails = styled.div`
+
   position: absolute;
   top: 4rem;
   left: 3rem;
   width: calc(100% - 6rem);
   height: calc(100vh - 4rem);
-  z-index: 2;
-  display: none;
   background-color: hsl(207, 26%, 17%);
-
+  }
+ 
   button {
   padding: .5rem 2rem;
   margin: 1rem 0 2rem;
   box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-}
-.fa-solid {
-  margin-right: .75rem;
-}
-.single-flag {
-  max-width: 46.6875rem;
-  width: 100%;
-  height: 18rem;box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.1);
-}
-.single-flag img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.1);
-}
+
+    .fa-solid {
+    margin-right: .75rem;
+    }
+  }
+ 
+  .single-flag {
+    max-width: 46.6875rem;
+    width: 100%;
+    height: 18rem;box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.1);
+
+      img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
 .single-country-details .fl-left *+*,
 .single-country-details .fl-right *+* {
   margin-top: .6rem;
 }
-`
+.single-country-details p, .single-country-details h2 {
+  margin: unset;
+}
+.single-country-details p {
+  font-size: .8rem;
+}
+.single-country-details h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.fl-left, .fl-right {
+  margin-top: 1.4rem;
+}
+.fl-down p {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+.fl-down {
+  padding: unset;
+  margin: 1.4rem 0;
+}
+.fl-down span {
+  margin-right: .3rem;
+  font-size: .8rem;
+  padding: .25rem .4rem;
+  border: 1px solid hsl(206, 12%, 78%);
+  border-radius: 3px;
+}
+
+`;
 
 const SingleCountry = ({ presentCountry }) => {
   const {
@@ -54,12 +89,12 @@ const SingleCountry = ({ presentCountry }) => {
   } = presentCountry;
 
   return (
-    <div>
-      <button className='home-page'>
+    <CountryDetails>
         <Link to={`/`}>
-          <i className='fa-solid fa-left-long' /> Back
+          <button className='home-page'>
+              <i className='fa-solid fa-left-long' /> Back
+          </button>
         </Link>
-      </button>
       <div gd-2=''>
         <article className='single-country-flag'>
           <div className='single-flag'>
@@ -110,7 +145,7 @@ const SingleCountry = ({ presentCountry }) => {
           </div>
         </article>
       </div>
-    </div>
+    </CountryDetails>
   );
 };
 
