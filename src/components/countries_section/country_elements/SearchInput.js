@@ -10,6 +10,7 @@ const MyForm = styled.form`
   justify-content: space-between;
   padding: 0rem 3rem;
   margin: 1.7rem 0;
+
   input[type='text'] {
   max-width: 18.5rem;
   width: 90%;
@@ -25,7 +26,17 @@ const MyForm = styled.form`
   background-repeat: no-repeat;
   background-position: 0.5rem;
   color: #fff;
-}
+  }
+  @media (max-width: 34.6875rem) {
+    flex-direction: column;
+    align-items: flex-start;
+    display: block;
+    width: 100%;
+
+    input {
+    margin-bottom: 1.5rem;
+    }
+  }
 `
 
 const SearchInput = () => {
