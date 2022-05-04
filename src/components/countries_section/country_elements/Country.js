@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -11,6 +11,11 @@ const CountryDetails = styled.div`
   line-height: 1rem;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 
   h2 {
     font-size: 0.85rem;
@@ -39,10 +44,8 @@ const CountryDetails = styled.div`
 
 const Country = ({ countryInfo, singleCountryItem }) => {
   const {flag, name, population, region, capital} = countryInfo;
-  const [presentCountry, setPresentCountry] = useState({})
 
   const onClick = (nation) => {
-    setPresentCountry({many: 'fish'})
     singleCountryItem(countryInfo)
   }
 

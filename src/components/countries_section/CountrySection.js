@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import SearchInput from './country_elements/SearchInput'
 import styled from 'styled-components'
 import Country from './country_elements/Country'

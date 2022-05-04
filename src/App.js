@@ -6,6 +6,7 @@ import Header from './components/Header';
 
 function App() {
   const [countriesArr, setCountriesArr] = useState([]);
+  const [presentCountry, setPresentCountry] = useState({})
 
   const getCountryInfo = async () => {
     const countryResponse = await fetch('https://restcountries.com/v2/all'),
@@ -13,6 +14,11 @@ function App() {
 
     setCountriesArr(countryData);
   };
+  
+
+  const singleCountryItem = (nation) => {
+    setPresentCountry(nation)
+  }
 
   return (
     <Router>
@@ -25,9 +31,10 @@ function App() {
             element={<CountrySection
                 getCountryInfo={getCountryInfo}
                 countriesArr={countriesArr}
+                singleCountryItem={singleCountryItem}
               />}
           />
-          <Route exact path='/country/:id' element={ <SingleCountry/> } />
+          <Route exact path='/country/:id' element={ <SingleCountry presentCountry={presentCountry} /> } />
         </Routes>
       </div>
     </Router>
