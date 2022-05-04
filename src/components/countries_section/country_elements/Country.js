@@ -41,15 +41,14 @@ const Country = ({ countryInfo, singleCountryItem }) => {
   const {flag, name, population, region, capital} = countryInfo;
   const [presentCountry, setPresentCountry] = useState({})
 
-  const onClick = () => {
-    setPresentCountry(countryInfo)
-    console.log(presentCountry);
-    singleCountryItem(presentCountry)
+  const onClick = (nation) => {
+    setPresentCountry({many: 'fish'})
+    singleCountryItem(countryInfo)
   }
 
   return (
     <CountryDetails>
-      <Link to={`/country/${name}`} onClick={onClick}>      
+      <Link to={`/country/${name}`} onClick={(e) => onClick(countryInfo)}>      
       <div className='flag'>
         <img src={flag} alt='' />
       </div>

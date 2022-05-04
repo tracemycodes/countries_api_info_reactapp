@@ -13,22 +13,14 @@ const AllCountries = styled.section`
   gap: 3rem;
 `
 
-const CountrySection = ({ getCountryInfo, countriesArr }) => {
+const CountrySection = ({ getCountryInfo, countriesArr, singleCountryItem }) => {
 
   
   useEffect(() => {
     getCountryInfo()
     // es-lint 
   }, []);
-  
-  
-  const [ singleCountry, setSingleCountry ] = useState({});
-
-  const singleCountryItem = (nation) => {
-    setSingleCountry(nation)
-    console.log(singleCountry);
-    // console.log(nation);
-  }
+    
 
   return (
     <>
