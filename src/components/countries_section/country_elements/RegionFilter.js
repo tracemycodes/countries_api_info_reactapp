@@ -39,7 +39,7 @@ const SelectDiv = styled.ul`
   
 `;
 
-const RegionFilter = () => {
+const RegionFilter = ({ regionByFilter }) => {
   const [selectText, setSelectText] = useState('');
   const [modal, setModal] = useState(false);
 
@@ -47,6 +47,7 @@ const RegionFilter = () => {
   const innerOption = (e) => {
     setSelectText(e.target.innerText)
     setModal(false)
+    regionByFilter(selectText)
     e.preventDefault()
   }
 

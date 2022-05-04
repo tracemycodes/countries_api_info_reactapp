@@ -121,6 +121,7 @@ const CountryDetails = styled.div`
 
     .fl-down p {
       display: inline;
+      margin-right: 1rem;
     }
 
     .fl-down div {

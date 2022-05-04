@@ -39,12 +39,13 @@ const MyForm = styled.form`
   }
 `
 
-const SearchInput = () => {
+const SearchInput = ({ currentSearch }) => {
   const [text, setText] = useState('')
 
   const onChange = (e) => {
     e.preventDefault()
     setText(e.target.value)
+    currentSearch(text)
   }
 
 
