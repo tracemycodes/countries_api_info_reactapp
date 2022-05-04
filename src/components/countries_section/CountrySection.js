@@ -30,6 +30,11 @@ const CountrySection = ({ getCountryInfo, countriesArr, singleCountryItem }) => 
     setFilterText(text)
   }
 
+  const regionByFilter = (theRegion) => {
+    setFilterText(theRegion)
+  }
+
+
   const filterCountries = () => {
     let newArr = countriesArr.filter(country => {
       const regex = new RegExp(filterText, 'gi')
@@ -42,7 +47,7 @@ const CountrySection = ({ getCountryInfo, countriesArr, singleCountryItem }) => 
 
   return (
     <>
-    <SearchInput currentSearch={currentSearch} />
+    <SearchInput currentSearch={currentSearch} regionByFilter={regionByFilter} />
     <AllCountries>
       {filterState.length !== null ? filterState.map(country => 
         <Country key={country.id} countryInfo={country} singleCountryItem={singleCountryItem} />

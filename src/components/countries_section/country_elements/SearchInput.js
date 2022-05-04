@@ -39,7 +39,7 @@ const MyForm = styled.form`
   }
 `
 
-const SearchInput = ({ currentSearch }) => {
+const SearchInput = ({ currentSearch, regionByFilter }) => {
   const [text, setText] = useState('')
 
   const onChange = (e) => {
@@ -53,7 +53,7 @@ const SearchInput = ({ currentSearch }) => {
     <MyForm>
           <input type="text" name="text" placeholder="Search for a country" className="searchInput" onChange={onChange} />       
       
-      <RegionFilter/>
+      <RegionFilter regionByFilter={regionByFilter} />
     </MyForm>
   )
 }

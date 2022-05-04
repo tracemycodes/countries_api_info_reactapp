@@ -45,10 +45,10 @@ const RegionFilter = ({ regionByFilter }) => {
 
 
   const innerOption = (e) => {
+    e.preventDefault()
     setSelectText(e.target.innerText)
     setModal(false)
     regionByFilter(selectText)
-    e.preventDefault()
   }
 
   const handleModal = (e) => {
