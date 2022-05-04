@@ -22,7 +22,7 @@ const CountrySection = ({ getCountryInfo, countriesArr }) => {
   }, []);
   
   
-  const [ singleCountry, setSingleCountry ] = useState(null);
+  const [ singleCountry, setSingleCountry ] = useState({});
 
   const singleCountryItem = (nation) => {
     setSingleCountry(nation)

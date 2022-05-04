@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const CountryDetails = styled.div`
@@ -36,22 +37,33 @@ const CountryDetails = styled.div`
   }
 `;
 
-const Country = ({ countryInfo }) => {
+const Country = ({ countryInfo, singleCountryItem }) => {
+  const {flag, name, population, region, capital} = countryInfo;
+  const [presentCountry, setPresentCountry] = useState({})
+
+  const onClick = () => {
+    setPresentCountry(countryInfo)
+    console.log(presentCountry);
+    singleCountryItem(presentCountry)
+  }
+
   return (
     <CountryDetails>
+      <Link to={`/country/${name}`} onClick={onClick}>      
       <div className='flag'>
-        <img src={countryInfo.flag} alt='' />
+        <img src={flag} alt='' />
       </div>
-      <h2 className='country'>{countryInfo.name}</h2>
+      <h2 className='country'>{name}</h2>
       <p className='population'>
-        <strong>population:</strong> {countryInfo.population}
+        <strong>population:</strong> {population}
       </p>
       <p className='Region'>
-        <strong>Region:</strong> {countryInfo.region}
+        <strong>Region:</strong> {region}
       </p>
       <p className='Capital'>
-        <strong>Capital:</strong> {countryInfo.capital}
+        <strong>Capital:</strong> {capital}
       </p>
+      </Link>
     </CountryDetails>
   );
 };
