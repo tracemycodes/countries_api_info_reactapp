@@ -16,7 +16,7 @@ const AllCountries = styled.section`
 const CountrySection = ({ getCountryInfo, countriesArr, singleCountryItem }) => {
 
   const [filterState, setFilterState] = useState([]);
-  const [filterText, setFilterText] = useState([])
+  const [filterText, setFilterText] = useState('')
 
   
   useEffect(() => {
@@ -41,7 +41,6 @@ const CountrySection = ({ getCountryInfo, countriesArr, singleCountryItem }) => 
       return country.name.match(regex) || country.region.match(regex);
     })
     setFilterState(newArr)
-    console.log(filterState);
   }
     
 

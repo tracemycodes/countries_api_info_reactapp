@@ -4,6 +4,8 @@ import CountrySection from './components/countries_section/CountrySection';
 import SingleCountry from './components/countries_section/SingleCountry';
 import Header from './components/Header';
 
+import GithubState from './context/github/GithubState';
+
 function App() {
   const [countriesArr, setCountriesArr] = useState([]);
   const [presentCountry, setPresentCountry] = useState({})
@@ -21,6 +23,7 @@ function App() {
   }
 
   return (
+    <GithubState>
     <Router>
       <div className='App'>
         <Header />
@@ -38,6 +41,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </GithubState>
   );
 }
 
