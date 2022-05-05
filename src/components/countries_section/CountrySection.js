@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import SearchInput from './country_elements/SearchInput'
 import styled from 'styled-components'
 import Country from './country_elements/Country'
+import GithubContext from '../../context/github/githubContext'
 
 const AllCountries = styled.section`
   
@@ -13,30 +14,32 @@ const AllCountries = styled.section`
   gap: 3rem;
 `
 
-const CountrySection = ({ getCountryInfo, countriesArr, singleCountryItem }) => {
+const CountrySection = () => {
+
+  const githubContext = useContext(GithubContext);
 
   const [filterState, setFilterState] = useState([]);
-  const [filterText, setFilterText] = useState('')
+  // const [filterText, setFilterText] = useState('')
 
   
   useEffect(() => {
-    getCountryInfo()
+    githubContext.getCountryInfo()
     filterCountries()
     // eslint-disable-next-line 
-  }, [filterText]);
+  }, [filterText]); 
 
 
-  const currentSearch = (text) => {
-    setFilterText(text)
-  }
+  // const currentSearch = (text) => {
+  //   setFilterText(text)
+  // }
 
-  const regionByFilter = (theRegion) => {
-    setFilterText(theRegion)
-  }
+  // const regionByFilter = (theRegion) => {
+  //   setFilterText(theRegion)
+  // }
 
 
   const filterCountries = () => {
-    let newArr = countriesArr.filter(country => {
+    let newArr = githubContext.countriesArr.filter(country => {
       const regex = new RegExp(filterText, 'gi')
       return country.name.match(regex) || country.region.match(regex);
     })
@@ -49,9 +52,9 @@ const CountrySection = ({ getCountryInfo, countriesArr, singleCountryItem }) => 
     <SearchInput currentSearch={currentSearch} regionByFilter={regionByFilter} />
     <AllCountries>
       {filterState.length !== null ? filterState.map(country => 
-        <Country key={country.id} countryInfo={country} singleCountryItem={singleCountryItem} />
-      ) : countriesArr.map(country => 
-        <Country key={country.id} countryInfo={country} singleCountryItem={singleCountryItem} />
+        <Country key={country.id} countryInfo={country}  />
+      ) : githubContext.countriesArr.map(country => 
+        <Country key={country.id} countryInfo={country}  />
       ) }
 
     </AllCountries>

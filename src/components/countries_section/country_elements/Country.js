@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import GithubContext from '../../../context/github/githubContext';
 
 const CountryDetails = styled.div`
   background-color: hsl(209, 23%, 22%);
@@ -42,11 +43,13 @@ const CountryDetails = styled.div`
   }
 `;
 
-const Country = ({ countryInfo, singleCountryItem }) => {
+const Country = ({ countryInfo }) => {
+  const githubContext = useContext(GithubContext);
+
   const {flag, name, population, region, capital} = countryInfo;
 
   const onClick = (nation) => {
-    singleCountryItem(countryInfo)
+    githubContext.singleCountryItem(countryInfo)
   }
 
   return (
