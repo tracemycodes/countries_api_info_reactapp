@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import SearchInput from './country_elements/SearchInput'
 import styled from 'styled-components'
 import Country from './country_elements/Country'
@@ -18,7 +18,7 @@ const CountrySection = () => {
 
   const githubContext = useContext(GithubContext);
 
-  const [filterState, setFilterState] = useState([]);
+  // const [filterState, setFilterState] = useState([]);
   // const [filterText, setFilterText] = useState('')
 
   
@@ -26,7 +26,7 @@ const CountrySection = () => {
     githubContext.getCountryInfo()
     filterCountries()
     // eslint-disable-next-line 
-  }, [filterText]); 
+  }, [githubContext.filterText]); 
 
 
   // const currentSearch = (text) => {
@@ -40,18 +40,18 @@ const CountrySection = () => {
 
   const filterCountries = () => {
     let newArr = githubContext.countriesArr.filter(country => {
-      const regex = new RegExp(filterText, 'gi')
+      const regex = new RegExp(githubContext.filterText, 'gi')
       return country.name.match(regex) || country.region.match(regex);
     })
-    setFilterState(newArr)
+    githubContext.setFilterState(newArr)
   }
     
 
   return (
     <>
-    <SearchInput currentSearch={currentSearch} regionByFilter={regionByFilter} />
+    <SearchInput />
     <AllCountries>
-      {filterState.length !== null ? filterState.map(country => 
+      {githubContext.filterArr.length !== null ? githubContext.filterArr.map(country => 
         <Country key={country.id} countryInfo={country}  />
       ) : githubContext.countriesArr.map(country => 
         <Country key={country.id} countryInfo={country}  />

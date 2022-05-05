@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import CountrySection from './components/countries_section/CountrySection';
 import SingleCountry from './components/countries_section/SingleCountry';
 import Header from './components/Header';
