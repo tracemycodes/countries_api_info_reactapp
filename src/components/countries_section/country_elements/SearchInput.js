@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import RegionFilter from './RegionFilter'
+import GithubContext from '../../../context/github/githubContext'
 
 
 const MyForm = styled.form`
@@ -39,13 +40,15 @@ const MyForm = styled.form`
   }
 `
 
-const SearchInput = ({ currentSearch, regionByFilter }) => {
+const SearchInput = () => {
+  const githubContext = useContext(GithubContext);
+
   const [text, setText] = useState('')
 
   const onChange = (e) => {
     e.preventDefault()
     setText(e.target.value)
-    currentSearch(text)
+    githubContext.currentSearch(text)
   }
 
 
@@ -53,7 +56,7 @@ const SearchInput = ({ currentSearch, regionByFilter }) => {
     <MyForm>
           <input type="text" name="text" placeholder="Search for a country" className="searchInput" onChange={onChange} />       
       
-      <RegionFilter regionByFilter={regionByFilter} />
+      <RegionFilter/>
     </MyForm>
   )
 }

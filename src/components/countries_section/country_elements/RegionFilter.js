@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
+import GithubContext from '../../../context/github/githubContext';
 
 const SelectDiv = styled.ul`
   position: relative;
@@ -39,7 +40,9 @@ const SelectDiv = styled.ul`
   
 `;
 
-const RegionFilter = ({ regionByFilter }) => {
+const RegionFilter = () => {
+  const githubContext = useContext(GithubContext);
+
   const [selectText, setSelectText] = useState('');
   const [modal, setModal] = useState(false);
 
@@ -48,7 +51,7 @@ const RegionFilter = ({ regionByFilter }) => {
     e.preventDefault()
     setSelectText(e.target.innerText)
     setModal(false)
-    regionByFilter(selectText)
+    githubContext.currentSearch(selectText)
   }
 
   const handleModal = (e) => {
