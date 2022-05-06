@@ -144,8 +144,9 @@ const CountryDetails = styled.div`
 const SingleCountry = () => {
   const githubContext = useContext(GithubContext);
 
-  const { presentCountry } = githubContext;
-  
+  console.log("object")
+
+  // const { presentCountry } = githubContext;
   const {
     flag,
     name,
@@ -158,7 +159,7 @@ const SingleCountry = () => {
     currencies,
     languages,
     borders,
-  } = presentCountry;
+  } = githubContext.presentCountry;
 
   return (
     <CountryDetails>

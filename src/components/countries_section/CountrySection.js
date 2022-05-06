@@ -16,8 +16,11 @@ const AllCountries = styled.section`
 
 const CountrySection = () => {
 
+  
   const githubContext = useContext(GithubContext);
 
+  
+  // console.log(githubContext.countriesArr);
   // const [filterState, setFilterState] = useState([]);
   // const [filterText, setFilterText] = useState('')
 
