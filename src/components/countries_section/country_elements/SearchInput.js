@@ -43,12 +43,10 @@ const MyForm = styled.form`
 const SearchInput = () => {
   const githubContext = useContext(GithubContext);
 
-  const [text, setText] = useState('')
 
   const onChange = (e) => {
     e.preventDefault()
-    setText(e.target.value)
-    githubContext.currentSearch(text)
+    githubContext.currentSearch(e.target.value)
   }
 
 
