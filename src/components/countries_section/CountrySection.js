@@ -25,11 +25,11 @@ const CountrySection = () => {
   // const [filterText, setFilterText] = useState('')
 
   
-  useEffect(() => {
-    getCountryInfo()
-    filterCountries()
-    // eslint-disable-next-line 
-  }, [filterText]); 
+  // useEffect(() => {
+  //   getCountryInfo()
+  //   filterCountries()
+  //   // eslint-disable-next-line 
+  // }, [filterText]); 
 
 
   // const currentSearch = (text) => {
@@ -49,6 +49,12 @@ const CountrySection = () => {
     setFilterState(newArr)
   }
     
+   useEffect(() => {
+    getCountryInfo()
+    filterCountries()
+    // eslint-disable-next-line 
+  }, [filterText, countriesArr]); 
+
 
   return (
     <>

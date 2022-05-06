@@ -51,7 +51,7 @@ const RegionFilter = () => {
     e.preventDefault()
     setSelectText(e.target.innerText)
     setModal(false)
-    githubContext.currentSearch(selectText)
+    githubContext.currentSearch(e.target.innerText)
   }
 
   const handleModal = (e) => {
