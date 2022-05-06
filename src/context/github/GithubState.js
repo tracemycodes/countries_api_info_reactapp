@@ -51,7 +51,7 @@ const GithubState = (props) => {
   const singleCountryItem = (nation) => {
     dispatch({
       type: SINGLE_COUNTRY,
-      patload: nation
+      payload: nation
     })
   }
 

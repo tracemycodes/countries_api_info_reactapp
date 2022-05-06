@@ -20,16 +20,16 @@ const CountrySection = () => {
   const githubContext = useContext(GithubContext);
 
   
-  // console.log(githubContext.countriesArr);
+  const { getCountryInfo, filterText, countriesArr, setFilterState, filterArr  } = githubContext;
   // const [filterState, setFilterState] = useState([]);
   // const [filterText, setFilterText] = useState('')
 
   
   useEffect(() => {
-    githubContext.getCountryInfo()
+    getCountryInfo()
     filterCountries()
     // eslint-disable-next-line 
-  }, [githubContext.filterText]); 
+  }, [filterText]); 
 
 
   // const currentSearch = (text) => {
@@ -42,11 +42,11 @@ const CountrySection = () => {
 
 
   const filterCountries = () => {
-    let newArr = githubContext.countriesArr.filter(country => {
-      const regex = new RegExp(githubContext.filterText, 'gi')
+    let newArr = countriesArr.filter(country => {
+      const regex = new RegExp(filterText, 'gi')
       return country.name.match(regex) || country.region.match(regex);
     })
-    githubContext.setFilterState(newArr)
+    setFilterState(newArr)
   }
     
 
@@ -54,9 +54,9 @@ const CountrySection = () => {
     <>
     <SearchInput />
     <AllCountries>
-      {githubContext.filterArr.length !== null ? githubContext.filterArr.map(country => 
+      {filterArr.length !== null ? filterArr.map(country => 
         <Country key={country.id} countryInfo={country}  />
-      ) : githubContext.countriesArr.map(country => 
+      ) : countriesArr.map(country => 
         <Country key={country.id} countryInfo={country}  />
       ) }
 

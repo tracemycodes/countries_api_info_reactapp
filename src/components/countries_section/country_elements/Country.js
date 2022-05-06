@@ -44,12 +44,14 @@ const CountryDetails = styled.div`
 `;
 
 const Country = ({ countryInfo }) => {
+  const {flag, name, population, region, capital} = countryInfo;
   const githubContext = useContext(GithubContext);
 
-  const {flag, name, population, region, capital} = countryInfo;
+  const { singleCountryItem } = githubContext;
+
 
   const onClick = (nation) => {
-    githubContext.singleCountryItem(countryInfo)
+    singleCountryItem(countryInfo)
   }
 
   return (
