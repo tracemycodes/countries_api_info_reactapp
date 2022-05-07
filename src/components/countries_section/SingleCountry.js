@@ -30,7 +30,7 @@ const CountryDetails = styled.div`
   .single-flag {
     max-width: 46.6875rem;
     width: 100%;
-    height: 18rem;box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.1);
 
       img {
       object-fit: cover;
@@ -42,9 +42,9 @@ const CountryDetails = styled.div`
 
   > div {
   width: 100%;
-  height: calc(100% - 5rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  align-content: center;
   gap: 2rem;
 }
 
@@ -53,7 +53,7 @@ const CountryDetails = styled.div`
 
   h2 {
   font-size: 0.85rem;
-  margin: 0.8rem;
+  margin-bottom: 0.8rem;
   }
 
   p {
@@ -69,7 +69,6 @@ const CountryDetails = styled.div`
   margin-top: .6rem;
 }
 .single-country-details{
-
   color: #fff;
 
   p{ 
@@ -81,7 +80,6 @@ const CountryDetails = styled.div`
     margin: unset;
     font-size: 1rem;
     font-weight: bold;
-    margin-top: 2rem;
   }
 
   .fl-left, .fl-right {
@@ -103,7 +101,7 @@ const CountryDetails = styled.div`
     border: 1px solid hsl(206, 12%, 78%);
     border-radius: 3px;
   }
-  @media (min-width: 966px) {
+  @media (min-width: 825px) {
     .single-country-display>div {
     gap: 7rem;
     }
@@ -144,9 +142,6 @@ const CountryDetails = styled.div`
 const SingleCountry = () => {
   const githubContext = useContext(GithubContext);
 
-  console.log("object")
-
-  // const { presentCountry } = githubContext;
   const {
     flag,
     name,

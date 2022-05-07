@@ -9,7 +9,7 @@ const CountryDetails = styled.div`
   background-color: hsl(209, 23%, 22%);
   border-radius: 6px;
   color: #fff;
-  padding-bottom: 1rem;
+  padding-bottom: .4rem;
   letter-spacing: 0.07rem;
   line-height: 1rem;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -22,20 +22,19 @@ const CountryDetails = styled.div`
 
   h2 {
     font-size: 0.85rem;
-    margin: 0.8rem;
+    margin: 0.6rem;
   }
 
   p {
     font-size: 0.7rem;
-    margin: 0.3rem 0.8rem 0.3rem 0.8rem;
-    margin-bottom: 0.3rem;
+    margin: 0.2rem 0.6rem 0.2rem 0.6rem;
   }
 
   .flag {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    height: 8.2rem;
-    margin-bottom: 1.2rem;
+    height: 7.5rem;
+    margin-bottom: 1rem;
   }
 
   .flag img {
