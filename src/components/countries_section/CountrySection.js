@@ -24,7 +24,8 @@ const CountrySection = () => {
 
   const filterCountries = () => {
     let newArr = countriesArr.filter(country => {
-      const regex = new RegExp(filterText, 'gi')
+      let filterVar = filterText === 'All' ? '' : filterText;
+      const regex = new RegExp(filterVar, 'gi')
       return country.name.match(regex) || country.region.match(regex);
     })
     setFilterState(newArr)
