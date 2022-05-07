@@ -60,10 +60,10 @@ const CountrySection = () => {
     <>
     <SearchInput />
     <AllCountries>
-      {filterArr.length !== null ? filterArr.map(country => 
-        <Country key={country.id} countryInfo={country}  />
-      ) : countriesArr.map(country => 
-        <Country key={country.id} countryInfo={country}  />
+      {filterArr.length !== null ? filterArr.map((country, index) => 
+        <Country key={index} countryInfo={country}  />
+      ) : countriesArr.map((country, index) => 
+        <Country key={index} countryInfo={country}  />
       ) }
 
     </AllCountries>
