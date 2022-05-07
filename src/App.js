@@ -7,20 +7,6 @@ import Header from './components/Header';
 import GithubState from './context/github/GithubState';
 
 function App() {
-  // const [countriesArr, setCountriesArr] = useState([]);
-  // const [presentCountry, setPresentCountry] = useState({})
-
-  // const getCountryInfo = async () => {
-  //   const countryResponse = await fetch('https://restcountries.com/v2/all'),
-  //     countryData = await countryResponse.json();
-
-  //   setCountriesArr(countryData);
-  // };
-  
-
-  // const singleCountryItem = (nation) => {
-  //   setPresentCountry(nation)
-  // }
 
   return (
     <GithubState>
@@ -31,11 +17,7 @@ function App() {
           <Route
             exact
             path='/'
-            element={<CountrySection
-                // getCountryInfo={getCountryInfo}
-                // countriesArr={countriesArr}
-                // singleCountryItem={singleCountryItem}
-              />}
+            element={<CountrySection />}
           />
           <Route exact path='/country/:id' element={ <SingleCountry /> } />
         </Routes>

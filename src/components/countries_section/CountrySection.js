@@ -21,25 +21,6 @@ const CountrySection = () => {
 
   
   const { getCountryInfo, filterText, countriesArr, setFilterState, filterArr  } = githubContext;
-  // const [filterState, setFilterState] = useState([]);
-  // const [filterText, setFilterText] = useState('')
-
-  
-  // useEffect(() => {
-  //   getCountryInfo()
-  //   filterCountries()
-  //   // eslint-disable-next-line 
-  // }, [filterText]); 
-
-
-  // const currentSearch = (text) => {
-  //   setFilterText(text)
-  // }
-
-  // const regionByFilter = (theRegion) => {
-  //   setFilterText(theRegion)
-  // }
-
 
   const filterCountries = () => {
     let newArr = countriesArr.filter(country => {

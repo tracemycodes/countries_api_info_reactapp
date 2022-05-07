@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types'
+
 import GithubContext from '../../../context/github/githubContext';
 
 const CountryDetails = styled.div`
@@ -74,5 +76,9 @@ const Country = ({ countryInfo }) => {
     </CountryDetails>
   );
 };
+
+Country.prototype = {
+  countryInfo: PropTypes.object.isRequired,
+}
 
 export default Country;
