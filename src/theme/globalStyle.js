@@ -13,12 +13,20 @@ html {
 
 body {
   
-    background-color: hsl(207, 26%, 17%);
+    background-color: ${ ( { theme } ) => theme.background };
 }
 `;
 
 export const LightTheme = {
-  
+  background: '#fafafa',
+  header: '#ffffff',
+  text: '#111517'
+}
+
+export const DarkTheme = {
+  background: '#202c37',
+  header: '#2b3945',
+  text: '#fff'
 }
 
 // export default GlobalStyle;

@@ -6,8 +6,8 @@ const SelectDiv = styled.ul`
   position: relative;
   font-family: Arial;
   width: 8rem;
-  background-color: hsl(209, 23%, 22%);
-  color: #fff;
+  background-color: ${ ( { theme } ) => theme.header };
+  color: ${ ( { theme } ) => theme.text };
   border-radius: 4px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   padding: 0.4rem 0.8rem;
@@ -17,9 +17,9 @@ const SelectDiv = styled.ul`
 
   .select-div {
     position: absolute;
-    background-color: hsl(209, 23%, 22%);
+    background-color: ${ ( { theme } ) => theme.header };
     list-style: none;
-    color: #fff;
+    color: ${ ( { theme } ) => theme.text };
     top: 105%;
     left: 0;
     right: 0;

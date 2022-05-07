@@ -20,13 +20,13 @@ const MyForm = styled.form`
   border: none;
   outline: none;
   border-radius: 5px;
-  background-color: hsl(209, 23%, 22%);
+  background-color: ${ ( { theme } ) => theme.header };
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   background-image: url(../images/search.svg);
   background-size: 0.8rem;
   background-repeat: no-repeat;
   background-position: 0.5rem;
-  color: #fff;
+  color: ${ ( { theme } ) => theme.text };
   }
   @media (max-width: 34.6875rem) {
     flex-direction: column;

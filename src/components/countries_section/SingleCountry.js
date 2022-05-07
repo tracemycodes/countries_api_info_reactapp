@@ -10,16 +10,16 @@ const CountryDetails = styled.div`
   left: 3rem;
   width: calc(100% - 6rem);
   height: calc(100vh - 4rem);
-  background-color: hsl(207, 26%, 17%);
+  background-color: ${ ( { theme } ) => theme.background };
 }
  
   button {
   padding: .5rem 2rem;
   margin: 1rem 0 2rem;
   box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.1);
-  background-color: hsl(209, 23%, 22%);
+  background-color: ${ ( { theme } ) => theme.header };
   border: none;
-  color: #fff;
+  color: ${ ( { theme } ) => theme.text };
   cursor: pointer;
 
     .fa-solid {
@@ -69,7 +69,7 @@ const CountryDetails = styled.div`
   margin-top: .6rem;
 }
 .single-country-details{
-  color: #fff;
+  color: ${ ( { theme } ) => theme.text };
 
   p{ 
     margin: unset;

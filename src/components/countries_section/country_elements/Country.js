@@ -6,9 +6,9 @@ import PropTypes from 'prop-types'
 import GithubContext from '../../../context/github/githubContext';
 
 const CountryDetails = styled.div`
-  background-color: hsl(209, 23%, 22%);
+  background-color: ${ ( { theme } ) => theme.header };
   border-radius: 6px;
-  color: #fff;
+  color: ${ ( { theme } ) => theme.text };
   padding-bottom: .4rem;
   letter-spacing: 0.07rem;
   line-height: 1rem;

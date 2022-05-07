@@ -7,9 +7,9 @@ const NavBar = styled.header`
   justify-content: space-between;
   padding: 0.7rem 3rem;
   font-size: 0.55rem;
-  background-color: hsl(209, 23%, 22%);
+  background-color: ${ ( { theme } ) => theme.header };
   box-shadow: 0px 10px 15px 3px rgba(0, 0, 0, 0.1);
-  color: #fff;
+  color: ${ ( { theme } ) => theme.text };
   z-index: 3;
   margin: 0;
 
@@ -17,8 +17,8 @@ const NavBar = styled.header`
     border: none;
     display: flex;
     font-size: 0.7rem;
-    background-color: hsl(209, 23%, 22%);
-    color: #fff;
+    background-color: ${ ( { theme } ) => theme.header };
+    color: ${ ( { theme } ) => theme.text };
     cursor: pointer;
   }
 
