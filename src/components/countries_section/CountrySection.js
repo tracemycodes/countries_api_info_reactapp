@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import SearchInput from './country_elements/SearchInput'
 import styled from 'styled-components'
 import Country from './country_elements/Country'
+import PropTypes from 'prop-types'
+
 import GithubContext from '../../context/github/githubContext'
 
 const AllCountries = styled.section`
@@ -14,7 +16,7 @@ const AllCountries = styled.section`
   gap: 3rem;
 `
 
-const CountrySection = ({myTheme}) => {
+const CountrySection = ({ setTheme }) => {
 
   
   const githubContext = useContext(GithubContext);
@@ -23,9 +25,10 @@ const CountrySection = ({myTheme}) => {
   const { getCountryInfo, filterText, countriesArr, setFilterState, filterArr, theme  } = githubContext;
 
 
-  const getTheme = () => {
-    myTheme(theme)
-  }
+  useEffect(() => {
+    setTheme(theme)
+    // eslint-disable-next-line
+  }, [theme])
 
 
   const filterCountries = () => {
@@ -57,6 +60,10 @@ const CountrySection = ({myTheme}) => {
     </AllCountries>
     </>
   )
+}
+
+CountrySection.prototype = {
+  setTheme: PropTypes.func.isRequired,
 }
 
 export default CountrySection

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import CountrySection from './components/countries_section/CountrySection';
@@ -10,8 +10,14 @@ import GithubState from './context/github/GithubState';
 
 function App() {
 
+  const [appTheme, setAppTheme] = useState('');
+
+  const setTheme = (theme) => {
+    setAppTheme(theme)
+  }
+
   return (
-    <ThemeProvider theme={LightTheme}>
+    <ThemeProvider theme={appTheme === 'dark' ? DarkTheme : LightTheme}>
       <GlobalStyle />
       <GithubState>
         <Router>
@@ -21,7 +27,7 @@ function App() {
               <Route
                 exact
                 path='/'
-                element={<CountrySection />}
+                element={<CountrySection setTheme={setTheme} />}
               />
               <Route exact path='/country/:id' element={<SingleCountry />} />
             </Routes>
