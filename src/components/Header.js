@@ -23,7 +23,7 @@ const NavBar = styled.header`
     cursor: pointer;
   }
 
-  .theme-icon {
+  i {
     margin-right: 0.5rem;
   }
 
@@ -44,8 +44,9 @@ const Header = () => {
     <NavBar>
       <h1>Where in the world?</h1>
       <button className='theme-btn' onClick={onClick} >
-        <i className='fa-regular fa-sun theme-icon'></i>
-        <p>Dark Mode</p>
+        {theme === 'dark' ? <i className='fa-solid fa-moon'></i> : <i className='fa-regular fa-sun'></i> }
+        {theme === 'dark' ? <p>  Dark Mode</p> : <p>  Light Mode</p>}
+        
       </button>
     </NavBar>
   );

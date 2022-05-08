@@ -16,7 +16,7 @@ const CountryDetails = styled.div`
   cursor: pointer;
   
   a {
-    color: #fff;
+    color: ${ ( { theme } ) => theme.text };
     text-decoration: none;
   }
 
