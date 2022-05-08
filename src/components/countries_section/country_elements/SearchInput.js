@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import RegionFilter from './RegionFilter'
 import GithubContext from '../../../context/github/githubContext'

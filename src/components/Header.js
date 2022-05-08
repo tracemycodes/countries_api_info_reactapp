@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import GithubContext from '../context/github/githubContext';
 
 const NavBar = styled.header`
   display: flex;
@@ -32,10 +33,17 @@ const NavBar = styled.header`
 `;
 
 const Header = () => {
+  const githubContext = useContext(GithubContext);
+  const { theme, toggleTheme } = githubContext;
+
+  const onClick = () => {
+    theme === 'dark' ? toggleTheme('light') : toggleTheme('dark')
+  }
+
   return (
     <NavBar>
       <h1>Where in the world?</h1>
-      <button className='theme-btn'>
+      <button className='theme-btn' onClick={onClick} >
         <i className='fa-regular fa-sun theme-icon'></i>
         <p>Dark Mode</p>
       </button>

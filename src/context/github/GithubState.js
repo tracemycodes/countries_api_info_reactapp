@@ -6,6 +6,7 @@ import {
   FILTER_COUNTRY,
   SEARCH_COUNTRY,
   SINGLE_COUNTRY,
+  TOGGLE_THEME
 } from '../types';
 
 const GithubState = (props) => {
@@ -13,7 +14,8 @@ const GithubState = (props) => {
     countriesArr: [],
     presentCountry: {},
     filterText: '',
-    filterArr: []
+    filterArr: [],
+    theme: 'dark'
   }
 
   const [state, dispatch] = useReducer(GithubReducer, initialState);
@@ -55,16 +57,25 @@ const GithubState = (props) => {
     })
   }
 
+  const toggleTheme = (theme) => {
+    dispatch({
+      type: TOGGLE_THEME,
+      payload: theme
+    })
+  }
+
   return <GithubContext.Provider
     value={{
       countriesArr: state.countriesArr,
       presentCountry: state.presentCountry,
       filterText: state.filterText,
       filterArr: state.filterArr,
+      theme: state.theme,
       getCountryInfo,
       singleCountryItem,
       currentSearch,
-      setFilterState
+      setFilterState,
+      toggleTheme
     }}
   >
     {props.children}

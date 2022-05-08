@@ -14,13 +14,19 @@ const AllCountries = styled.section`
   gap: 3rem;
 `
 
-const CountrySection = () => {
+const CountrySection = ({myTheme}) => {
 
   
   const githubContext = useContext(GithubContext);
 
   
-  const { getCountryInfo, filterText, countriesArr, setFilterState, filterArr  } = githubContext;
+  const { getCountryInfo, filterText, countriesArr, setFilterState, filterArr, theme  } = githubContext;
+
+
+  const getTheme = () => {
+    myTheme(theme)
+  }
+
 
   const filterCountries = () => {
     let newArr = countriesArr.filter(country => {
