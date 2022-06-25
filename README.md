@@ -2,7 +2,7 @@
 
 - An informative web application, displaying basic information about countries around the globe, useful whenever you're considering going on your next vacation trip. &#128515;.
 
-**Link to project:** http://rec/
+**Link to project:** https://app.netlify.com/sites/agba-countries-api
 
 ![alt tag](./src/assets/desktop-preview.jpg)
 
